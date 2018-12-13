@@ -2,6 +2,7 @@ package com.bluewise.project.system.user.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +25,9 @@ public class IndexController extends BaseController
 
     @Autowired
     private RuoYiConfig ruoYiConfig;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     // 系统首页
     @GetMapping("/index")
