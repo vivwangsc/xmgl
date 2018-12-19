@@ -2,7 +2,7 @@ package com.bluewise.common.utils;
 
 import com.alibaba.fastjson.JSONObject;
 import com.bluewise.common.utils.http.HttpUtils;
-import com.bluewise.framework.config.RuoYiConfig;
+import com.bluewise.framework.config.BluewiseConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +25,7 @@ public class AddressUtils
         {
             return "内网IP";
         }
-        if (RuoYiConfig.isAddressEnabled())
+        if (BluewiseConfig.isAddressEnabled())
         {
             String rspStr = HttpUtils.sendPost(IP_URL, "ip=" + ip);
             if (StringUtils.isEmpty(rspStr))

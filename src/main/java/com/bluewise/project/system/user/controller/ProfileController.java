@@ -16,7 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.bluewise.common.utils.file.FileUploadUtils;
 import com.bluewise.framework.aspectj.lang.annotation.Log;
 import com.bluewise.framework.aspectj.lang.enums.BusinessType;
-import com.bluewise.framework.config.RuoYiConfig;
+import com.bluewise.framework.config.BluewiseConfig;
 import com.bluewise.framework.web.controller.BaseController;
 import com.bluewise.framework.web.domain.AjaxResult;
 import com.bluewise.framework.web.service.DictService;
@@ -138,7 +138,7 @@ public class ProfileController extends BaseController
         {
             if (!file.isEmpty())
             {
-                String avatar = FileUploadUtils.upload(RuoYiConfig.getAvatarPath(), file);
+                String avatar = FileUploadUtils.upload(BluewiseConfig.getAvatarPath(), file);
                 user.setAvatar(avatar);
                 if (userService.updateUserInfo(user) > 0)
                 {

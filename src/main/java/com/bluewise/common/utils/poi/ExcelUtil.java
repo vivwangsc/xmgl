@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
 import com.bluewise.common.utils.DateUtils;
 import com.bluewise.common.utils.StringUtils;
 import com.bluewise.framework.aspectj.lang.annotation.Excel;
-import com.bluewise.framework.config.RuoYiConfig;
+import com.bluewise.framework.config.BluewiseConfig;
 import com.bluewise.framework.web.domain.AjaxResult;
 
 /**
@@ -502,7 +502,7 @@ public class ExcelUtil<T>
      */
     public String getAbsoluteFile(String filename)
     {
-        String downloadPath = RuoYiConfig.getDownloadPath() + filename;
+        String downloadPath = BluewiseConfig.getDownloadPath() + filename;
         File desc = new File(downloadPath);
         if (!desc.getParentFile().exists())
         {
